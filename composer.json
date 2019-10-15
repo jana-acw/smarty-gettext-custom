@@ -1,6 +1,6 @@
 {
 	"name": "smarty-gettext-custom/smarty-gettext-custom",
-	"description": "Gettext plugin enabling internationalization in Smarty Package files",
+	"description": "Gettext plugin enabling internationalization in Smarty Package files. This is package forked from https://packagist.org/packages/smarty-gettext/smarty-gettext to adopt for Local from GET or Session parameter.",
 	"homepage": "https://github.com/jana-acw/smarty-gettext-custom",
 	"license": "LGPL-2.1",
 	"authors": [
