@@ -1,20 +1,16 @@
 {
 	"name": "smarty-gettext/smarty-gettext-custom",
 	"description": "Gettext plugin enabling internationalization in Smarty Package files",
-	"homepage": "https://github.com/smarty-gettext/smarty-gettext",
+	"homepage": "https://github.com/jana-acw/smarty-gettext-custom",
 	"license": "LGPL-2.1",
 	"authors": [
 		{
-			"name": "Sagi Bashari",
-			"email": "sagi@boom.org.il"
-		},
-		{
-			"name": "Elan Ruusamäe",
-			"email": "glen@delfi.ee"
+			"name": "Jana Manoharan",
+			"email": "janarthanmano@gmail.com"
 		}
 	],
 	"support": {
-		"issues": "https://github.com/smarty-gettext/smarty-gettext/issues"
+		"issues": ""
 	},
 	"autoload": {
 		"files": [
