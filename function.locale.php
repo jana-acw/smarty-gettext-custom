@@ -21,10 +21,13 @@ function smarty_function_locale($params, &$smarty) {
 	}
 
 	$path = null;
-	$template_dirs = method_exists($smarty, 'getTemplateDir') ? $smarty->getTemplateDir() : $smarty->template_dir;
+	//var_dump($smarty->getTemplateDir()); die();
+	//$template_dirs = method_exists($smarty, 'getTemplateDir') ? $smarty->getTemplateDir() : $smarty->template_dir;
+	$template_dirs = $smarty->getTemplateDir();
 	$path_param = isset($params['path']) ? $params['path'] : '';
 	$domain = isset($params['domain']) ? $params['domain'] : 'messages';
 	$stack_operation = isset($params['stack']) ? $params['stack'] : 'push';
+
 
 	foreach ((array)$template_dirs as $template_dir) {
 		$path = $template_dir . $path_param;
@@ -49,7 +52,16 @@ function smarty_function_locale($params, &$smarty) {
 		trigger_error("Unknown stack operation '{$stack_operation}'", E_USER_ERROR);
 	}
 
+    $path = TEMPLATE_DIR.isset($params['path']) ? $params['path'] : '';
+    // I18N support information here
+    $language = isset($params['lang']) ? $params['lang'] : '';
+    putenv("LANG=" . $language);
+    putenv("LANGUAGE=$language");
+    setlocale(LC_ALL, $language);
+
 	bind_textdomain_codeset($domain, 'UTF-8');
 	bindtextdomain($domain, $path);
 	textdomain($domain);
+
 }
+
