@@ -1,5 +1,5 @@
 {
-	"name": "smarty-gettext/smarty-gettext-custom",
+	"name": "smarty-gettext-custom/smarty-gettext-custom",
 	"description": "Gettext plugin enabling internationalization in Smarty Package files",
 	"homepage": "https://github.com/jana-acw/smarty-gettext-custom",
 	"license": "LGPL-2.1",
