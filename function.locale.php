@@ -52,16 +52,17 @@ function smarty_function_locale($params, &$smarty) {
 		trigger_error("Unknown stack operation '{$stack_operation}'", E_USER_ERROR);
 	}
 
-    $path = TEMPLATE_DIR.isset($params['path']) ? $params['path'] : '';
-    // I18N support information here
-    $language = isset($params['lang']) ? $params['lang'] : '';
-    putenv("LANG=" . $language);
-    putenv("LANGUAGE=$language");
-    setlocale(LC_ALL, $language);
+	// I18N support information here
+	$path = isset($params['path']) ? $params['path'] : TEMPLATE_DIR.'/Locale/';
+	$language = isset($params['lang']) ? $params['lang'] : 'pt_PT.utf-8';
+	putenv("LANG=" . $language);
+	putenv("LANGUAGE=$language");
+	setlocale(LC_ALL, $language);
 
 	bind_textdomain_codeset($domain, 'UTF-8');
 	bindtextdomain($domain, $path);
 	textdomain($domain);
 
 }
+
 
